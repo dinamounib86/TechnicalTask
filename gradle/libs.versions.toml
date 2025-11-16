@@ -18,6 +18,9 @@ moshi = "1.15.2"
 timber = "5.0.1"
 javapoet = "1.13.0"
 hiltNavigation = "1.2.0"
+mockk = "1.13.10"
+turbine = "1.0.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,7 +55,9 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version = "2.7.0" 
 coil-svg = { group = "io.coil-kt", name = "coil-svg", version = "2.2.2" }
 coil-gif = { group = "io.coil-kt", name = "coil-gif", version = "2.2.1" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
-
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,5 +1,6 @@
 package com.example.aroundegypt.presentation.details
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,6 +11,8 @@ import com.example.aroundegypt.domain.usecase.LikeExperiencesUseCase
 import com.example.aroundegypt.domain.usecase.SingleExperiencesUseCase
 import com.example.aroundegypt.presentation.home.HomeState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -25,12 +28,12 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailsViewModel @Inject constructor(
     private val singleExperiencesUseCase: SingleExperiencesUseCase,
-    private val likeExperiencesUseCase: LikeExperiencesUseCase,
+    private val likeExperiencesUseCase: LikeExperiencesUseCase
 ) : ViewModel() {
     val id = mutableStateOf("")
-    private val _detailsState = MutableStateFlow<DetailsState>(DetailsState.Loading)
+    val _detailsState = MutableStateFlow<DetailsState>(DetailsState.Loading)
     val detailsState: StateFlow<DetailsState> = _detailsState
-        .onStart {loadData(id.value)
+        .onStart {  loadData(id.value)
     }
         .stateIn(
             scope = viewModelScope,
@@ -81,7 +84,10 @@ class DetailsViewModel @Inject constructor(
         }
 
     }
-
+    @VisibleForTesting
+    fun setTestState(state: DetailsState) {
+        _detailsState.value = state
+    }
     sealed class DetailsState {
         object Loading : DetailsState()
         data class Success(
