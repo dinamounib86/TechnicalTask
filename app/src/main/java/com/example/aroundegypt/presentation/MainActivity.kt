@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.aroundegypt.presentation.home.HomeStateful
-import com.example.aroundegypt.ui.theme.AroundEgyptTheme
+import com.example.aroundegypt.Utils.theme.AroundEgyptTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 

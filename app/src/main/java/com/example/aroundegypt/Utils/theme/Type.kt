@@ -1,4 +1,4 @@
-package com.example.aroundegypt.ui.theme
+package com.example.aroundegypt.Utils.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

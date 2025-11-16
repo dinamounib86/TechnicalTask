@@ -1,4 +1,4 @@
-package com.example.aroundegypt.ui.theme
+package com.example.aroundegypt.Utils.theme
 
 import androidx.compose.ui.graphics.Color
 
