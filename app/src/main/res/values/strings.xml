@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AroundEgypt</string>
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_desc">Now you can explore any experience in 360 degrees and get all the details about it all in one place.</string>
+    <string name="most_recent">Most Recent</string>
+    <string name="recommended_experiences">Recommended Experiences</string>
+    <string name="try_luxor">Try “Luxor</string>
+</resources>
